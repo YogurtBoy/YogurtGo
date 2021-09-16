@@ -36,7 +36,7 @@ def get_valid_neighbors(fc):
     x, y = unflatten(fc)
     possible_neighbors = ((x + 1, y), (x-1, y), (x, y + 1), (x, y - 1))
 
-    return [flatten(n for n in possible_neighbors if is_on_board(n))]
+    return [flatten(n) for n in possible_neighbors if is_on_board(n)]
 
 
 NEIGHBORS = [get_valid_neighbors(fc) for fc in range(NN)]
